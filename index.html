@@ -1,0 +1,163 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Deepavali & Mahabharata — short films by Anand</title>
+<meta name="description" content="Happy Deepavali greetings and The Curse of Ashwatthama — short animated films.">
+<meta property="og:title" content="Deepavali & Mahabharata — short films by Anand">
+<meta property="og:description" content="Happy Deepavali greetings and The Curse of Ashwatthama.">
+<meta property="og:image" content="https://sanandnarayan.github.io/films/thumbs/deepavali-1.jpg">
+<meta property="og:type" content="website">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🪔</text></svg>">
+<style>
+  :root{--bg:#120d0a;--card:#1d1611;--line:#33271d;--text:#f6ead9;--muted:#bba48a;--gold:#f2b544;--accent:#ff8a3d}
+  *{box-sizing:border-box}
+  body{margin:0;background:radial-gradient(1200px 600px at 50% -200px,#3a2410 0%,var(--bg) 60%);color:var(--text);
+       font:16px/1.5 -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Noto Sans",sans-serif;min-height:100vh}
+  header{text-align:center;padding:56px 20px 24px}
+  header .lamp{font-size:40px}
+  h1{font-family:Georgia,"Times New Roman",serif;font-weight:600;font-size:clamp(28px,5vw,44px);margin:8px 0 6px;letter-spacing:.3px}
+  header p{color:var(--muted);margin:0}
+  nav{display:flex;gap:8px;justify-content:center;flex-wrap:wrap;padding:12px 16px 4px;position:sticky;top:0;z-index:5;
+      background:linear-gradient(var(--bg) 70%,transparent)}
+  nav a{color:var(--text);text-decoration:none;border:1px solid var(--line);background:var(--card);padding:6px 14px;border-radius:999px;font-size:14px}
+  nav a:hover{border-color:var(--gold)}
+  main{max-width:1180px;margin:0 auto;padding:8px 16px 64px}
+  section{padding-top:28px;scroll-margin-top:56px}
+  h2{font-family:Georgia,serif;font-weight:600;font-size:24px;margin:0 0 4px}
+  h2 small{font-family:inherit;color:var(--muted);font-size:14px;font-weight:400;margin-left:8px}
+  .sub{color:var(--muted);margin:0 0 16px;font-size:15px}
+  .grid{display:grid;gap:18px}
+  .portrait{grid-template-columns:repeat(auto-fill,minmax(230px,1fr))}
+  .landscape{grid-template-columns:repeat(auto-fill,minmax(420px,1fr))}
+  @media (max-width:480px){.landscape{grid-template-columns:1fr}.portrait{grid-template-columns:1fr 1fr;gap:12px}}
+  .card{background:var(--card);border:1px solid var(--line);border-radius:16px;overflow:hidden;display:flex;flex-direction:column}
+  .card.feature{border-color:#6b4a1c;box-shadow:0 0 0 1px #6b4a1c inset,0 10px 40px -20px #f2b54455}
+  video{display:block;width:100%;background:#000}
+  .portrait video{aspect-ratio:9/16}
+  .landscape video{aspect-ratio:16/9}
+  .meta{padding:10px 12px 12px;display:flex;flex-direction:column;gap:8px;flex:1}
+  .title{font-weight:600;font-size:15px}
+  .tag{display:inline-block;font-size:11px;font-weight:600;letter-spacing:.4px;text-transform:uppercase;color:#1b1206;background:var(--gold);
+       border-radius:6px;padding:1px 6px;margin-left:6px;vertical-align:2px}
+  .info{color:var(--muted);font-size:13px}
+  .actions{display:flex;gap:8px;margin-top:auto}
+  .actions a,.actions button{flex:1;text-align:center;font:inherit;font-size:13px;color:var(--text);background:#2a2018;border:1px solid var(--line);
+       border-radius:10px;padding:7px 8px;text-decoration:none;cursor:pointer}
+  .actions a:hover,.actions button:hover{border-color:var(--gold)}
+  footer{text-align:center;color:var(--muted);font-size:13px;padding:24px}
+  .toast{position:fixed;left:50%;bottom:24px;transform:translateX(-50%);background:var(--gold);color:#1b1206;font-weight:600;
+         padding:8px 16px;border-radius:999px;opacity:0;transition:opacity .2s;pointer-events:none}
+  .toast.show{opacity:1}
+</style>
+</head>
+<body>
+<header>
+  <div class="lamp">🪔</div>
+  <h1>Deepavali &amp; Mahabharata</h1>
+  <p>Short animated films</p>
+</header>
+<nav>
+  <a href="#deepavali">Happy Deepavali</a>
+  <a href="#diwali">Happy Diwali</a>
+  <a href="#ashwatthama">The Curse of Ashwatthama</a>
+  <a href="#drafts">Drafts</a>
+</nav>
+<main id="list"></main>
+<footer>Iniya Deepavali Nalvazhthukkal 🪔</footer>
+<div class="toast" id="toast">Link copied</div>
+
+<script>
+const B = "https://brahma.sh/f/";
+const SECTIONS = [
+  { id:"deepavali", title:"Happy Deepavali", note:"South Indian edition", shape:"portrait",
+    sub:"A family Deepavali morning. Same film, two soundtracks.",
+    items:[
+      { slug:"deepavali-1", title:"Happy Deepavali — music 1", tag:"Latest", feature:true, info:"20 s · vertical",
+        url:B+"file_01a1bc50-2211-7d11-909f-3b76bdb76d8e/klecQS0F1YekAGj9YGCBpkXvAYGgKjFT95ExnNPBBus/Happy%20Deepavali%20(South%20Indian)%20-%20music%201.mp4" },
+      { slug:"deepavali-2", title:"Happy Deepavali — music 2", tag:"Latest", feature:true, info:"20 s · vertical",
+        url:B+"file_01a1bc50-222b-7060-8c6a-4505671b5e08/snLGV9GCmxNXfcvTp0ntGWSeOMUhZBdc3GQsfPpSw34/Happy%20Deepavali%20(South%20Indian)%20-%20music%202.mp4" },
+    ]},
+  { id:"diwali", title:"Happy Diwali", note:"Final", shape:"portrait",
+    sub:"A city of lamps at dusk. Two soundtracks.",
+    items:[
+      { slug:"diwali-final-1", title:"Happy Diwali — music 1", info:"20 s · vertical",
+        url:B+"file_01a1bc50-2210-7391-84bc-56f8d527d16b/oQVdUY8t2tiFz46w4qytQ5QKskjSIqlhJ1PetHlw9HM/Happy%20Diwali%20-%20FINAL%20(music%201).mp4" },
+      { slug:"diwali-final-2", title:"Happy Diwali — music 2", info:"20 s · vertical",
+        url:B+"file_01a1bc50-2211-76eb-b38d-fbfd251dbb90/eyfh0ijdFYhTnRb8d-2b9kfjmouY1DopwpZeJ9aBP1Q/Happy%20Diwali%20-%20FINAL%20(music%202).mp4" },
+    ]},
+  { id:"ashwatthama", title:"The Curse of Ashwatthama", note:"Mahabharata", shape:"landscape",
+    sub:"Krishna curses the immortal Ashwatthama. 4K, two soundtracks.",
+    items:[
+      { slug:"ash-a", title:"The Curse of Ashwatthama — music A", tag:"4K", feature:true, info:"30 s · 4K · 50 MB",
+        url:B+"file_01a1bc50-874b-7fee-8508-03d96c872a71/3cJ97Mq41wncW_DmHVSGCIUKb1d0ofrVXnOsJNte13g/The%20Curse%20of%20Ashwatthama%20-%20FINAL%204K%20(music%20A).mp4" },
+      { slug:"ash-b", title:"The Curse of Ashwatthama — music B", tag:"4K", feature:true, info:"30 s · 4K · 50 MB",
+        url:B+"file_01a1bc50-57b4-766d-a97c-9d31a81b82e4/9oikXKFPnt-POOJbkz6ZtCwyNP9VzoITbGLMxhfjt2I/The%20Curse%20of%20Ashwatthama%20-%20FINAL%204K%20(music%20B).mp4" },
+    ]},
+  { id:"drafts", title:"Drafts", note:"Behind the scenes", shape:"portrait",
+    sub:"Earlier cuts and raw runs, on the way to the finals.",
+    items:[
+      { slug:"draft-v3", title:"Diwali animatic v3 — watercolor", info:"20 s · vertical",
+        url:B+"file_01a1bc50-2210-7c55-ab27-b6eeca45a839/WIEdPkdI0w2byOvmSGQ4Z_CRy8m_aKSSywjT1UPoyh0/Diwali%20-%20animatic%20v3%20watercolor%2020s.mp4" },
+      { slug:"draft-v2", title:"Diwali animatic v2 — bright", info:"30 s · vertical",
+        url:B+"file_01a1bc50-220f-7aeb-9dcc-c1a71556258d/wD9udmRrfryqlKy20BoX9PnNTTGp5OaUAsiE3m9s94Q/Diwali%20-%20animatic%20v2%20(bright).mp4" },
+      { slug:"draft-storyboard", title:"Diwali storyboard draft", info:"30 s · vertical",
+        url:B+"file_01a1bc50-220b-7f93-acf8-74dc5e09a8db/vMlPBlzjDqfM8lL9-CA7R_MpUexvSoZwSKhXI_wIipQ/Diwali%20-%20Brahma%20-%20animatic%20(storyboard%20draft).mp4" },
+    ]},
+  { id:"drafts-ash", title:"", shape:"landscape", sub:"",
+    items:[
+      { slug:"ash-run3", title:"Ashwatthama — raw run 3", info:"30 s · raw",
+        url:B+"file_01a1b7a0-a980-75c7-8fd6-d3e76919b7e9/53aVHoaq9Bn5NsO1nnYp8_bCWV8FdyY5bpIFaTVlulY/ashwatthama_run3.mp4" },
+      { slug:"ash-run1", title:"Ashwatthama — raw run 1", info:"30 s · 720p raw",
+        url:B+"file_01a1bc50-b526-78c7-9756-c24e87c7dfa6/nc3eQBbInXYhPV34kf2WhuNeh1fnTub33SHKOQj4dHQ/Curse%20of%20Ashwatthama%20-%20run%201%20(raw%20720p).mp4" },
+    ]},
+];
+
+const esc = s => s.replace(/[&<>"]/g, c => ({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[c]));
+const list = document.getElementById("list");
+for (const s of SECTIONS) {
+  const sec = document.createElement("section");
+  sec.id = s.id;
+  sec.innerHTML =
+    (s.title ? `<h2>${esc(s.title)}${s.note ? `<small>${esc(s.note)}</small>` : ""}</h2>` : "") +
+    (s.sub ? `<p class="sub">${esc(s.sub)}</p>` : "") +
+    `<div class="grid ${s.shape}">` + s.items.map(v => `
+      <div class="card${v.feature ? " feature" : ""}" id="v-${v.slug}">
+        <video controls playsinline preload="none" poster="thumbs/${v.slug}.jpg" src="${v.url}"></video>
+        <div class="meta">
+          <div class="title">${esc(v.title)}${v.tag ? `<span class="tag">${esc(v.tag)}</span>` : ""}</div>
+          <div class="info">${esc(v.info)}</div>
+          <div class="actions">
+            <button data-share="${v.slug}" data-title="${esc(v.title)}">Share</button>
+            <a href="${v.url}" download>Download</a>
+          </div>
+        </div>
+      </div>`).join("") + `</div>`;
+  if (!s.title) sec.style.paddingTop = "18px";
+  list.appendChild(sec);
+}
+
+// Only one video plays at a time.
+document.addEventListener("play", e => {
+  document.querySelectorAll("video").forEach(v => { if (v !== e.target) v.pause(); });
+}, true);
+
+const toast = document.getElementById("toast");
+document.addEventListener("click", async e => {
+  const b = e.target.closest("[data-share]");
+  if (!b) return;
+  const url = location.origin + location.pathname + "#v-" + b.dataset.share;
+  if (navigator.share) { try { await navigator.share({ title: b.dataset.title, url }); } catch (_) {} return; }
+  try { await navigator.clipboard.writeText(url); } catch (_) {}
+  toast.classList.add("show"); setTimeout(() => toast.classList.remove("show"), 1400);
+});
+
+// Opening a #v-… link scrolls to that video.
+if (location.hash.startsWith("#v-")) {
+  setTimeout(() => document.querySelector(location.hash)?.scrollIntoView({ block: "center" }), 50);
+}
+</script>
+</body>
+</html>
